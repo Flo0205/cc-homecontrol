@@ -1,3 +1,5 @@
+shell.run("updater")
+
 rednet.open("back")
 
 local page = 1
