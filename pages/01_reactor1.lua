@@ -42,7 +42,6 @@ local function printPage()
     print("Fuel Usage: " .. string.format("%.2f", reactorData.fuelUsage) .. " mB/t")
     term.setCursorPos(1, 8)
     print("Buffer: " .. string.format("%.2f", reactorData.energy) .. " kFE")
-
 end
 
 
@@ -69,7 +68,6 @@ local function rednetListener(senderId, message, protocol)
         end
     end  
 end
-
 
 
 return {printPage = printPage, eventListener = eventListener, rednetListener = rednetListener, pageName = "Reaktor 1"}
