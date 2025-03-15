@@ -11,7 +11,23 @@ local reactorData =
     forceStopped = false,
 }
 
+local function drawPowerGraph()
+    local graphWidth = 26  -- Width of the graph in characters
+    local powerPercentage = reactorData.generating / reactorData.maxEnergy
+    local filledWidth = math.floor(graphWidth * powerPercentage)
 
+    term.setCursorPos(1, 10)
+    term.setTextColor(colors.white)
+    term.setBackgroundColor(colors.gray)
+    term.clearLine()
+    term.write("[")
+    term.setBackgroundColor(colors.green)
+    term.write(string.rep(" ", filledWidth))
+    term.setBackgroundColor(colors.gray)
+    term.write(string.rep(" ", graphWidth - filledWidth))
+    term.write("] " .. string.format("%.2f", powerPercentage * 100) .. "%")
+    term.setBackgroundColor(colors.black)
+end
 
 local function printPage()
     if reactorData.forceStopped == false then
@@ -42,7 +58,7 @@ local function printPage()
     print("Fuel Usage: " .. string.format("%.2f", reactorData.fuelUsage) .. " mB/t")
     term.setCursorPos(1, 8)
     print("Buffer: " .. string.format("%.2f", reactorData.energy) .. " kFE")
-
+    drawPowerGraph()
 end
 
 
