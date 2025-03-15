@@ -1,5 +1,5 @@
 local function printPage()
-    -- code
+    -- code der Seite
 end
 
 
@@ -20,4 +20,4 @@ end
 
 
 
-return {printPage = printPage, eventListener = eventListener, rednetListener = rednetListener, pageName = "Reaktor 1"}
+return {printPage = printPage, eventListener = eventListener, rednetListener = rednetListener, pageName = "SeitenName"}
