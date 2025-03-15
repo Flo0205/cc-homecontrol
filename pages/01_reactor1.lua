@@ -88,4 +88,4 @@ end
 
 
 
-return {printPage = printPage, eventListener = eventListener, rednetListener = rednetListener, pageName = "Reaktor 11"}
+return {printPage = printPage, eventListener = eventListener, rednetListener = rednetListener, pageName = "Reaktor 1"}
